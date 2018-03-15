@@ -1,26 +1,16 @@
 @import 'variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
 
 /* Styles */
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
+  font-family: 'Avenir Next' ,'Nunito Sans', sans-serif;
   color: #4d4d4d;
-  margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  font-weight: 300;
-}
-
-td {
-	padding: 12px;
 }
 
 h2 {
-	color: blue;
+  font-size: 17px;
+  font-weight: bold;
 }
-
-.savings { color: $green; }
-.loss { color: red; }
-input.small { width: 46px; }
-td.fuel-savings-label { width: 175px; }
