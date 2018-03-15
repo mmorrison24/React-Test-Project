@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
+import Header from './Header';
 import NotFoundPage from './NotFoundPage';
 
 // This is a class-based component because the current
@@ -15,6 +16,7 @@ class App extends React.Component {
     const activeStyle = { color: 'blue' };
     return (
       <div>
+        <Header/>
         <div>
           <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
           {' | '}
