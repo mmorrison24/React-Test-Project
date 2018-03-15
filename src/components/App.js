@@ -17,18 +17,20 @@ class App extends React.Component {
     return (
       <div>
         <Header/>
-        <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          {' | '}
-          <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
-          {' | '}
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+        <div className={'container-fluid'}>
+          <div>
+            <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
+            {' | '}
+            <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
+            {' | '}
+            <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+          </div>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/about" component={AboutPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
       </div>
     );
   }

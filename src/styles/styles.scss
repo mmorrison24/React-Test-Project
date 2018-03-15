@@ -1,15 +1,10 @@
-/* Variables */
-$vin-blue: #5bb7db;
-$vin-green: #60b044;
-$vin-red: #ff0000;
+@import 'variables.scss';
 
 /* Styles */
 body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
   color: #4d4d4d;
-  min-width: 230px;
-  max-width: 550px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -22,10 +17,10 @@ td {
 }
 
 h2 {
-	color: $vin-blue;
+	color: blue;
 }
 
-.savings { color: $vin-green; }
-.loss { color: $vin-red; }
+.savings { color: $green; }
+.loss { color: red; }
 input.small { width: 46px; }
 td.fuel-savings-label { width: 175px; }
