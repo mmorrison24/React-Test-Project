@@ -20,7 +20,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={this.props.isVenueViewerOpen + 'test'}>
+      <div debug={this.props.isVenueViewerOpen + '-strtest'}>
         <Header isDrawerOpen={this.props.isVenueViewerOpen}/>
         <div className={'container-fluid'}>
           <Switch>

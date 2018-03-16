@@ -3,14 +3,20 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/styles.scss';
+
+import createSagaMiddleware from 'redux-saga'
+import mySaga from "./sagas/sagas";
 
 require('./favicon.ico');
 
 const store = configureStore();
+createSagaMiddleware(mySaga)
 
 render(
   <AppContainer>

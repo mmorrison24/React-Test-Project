@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import * as types from '../constants/actionTypes';
 
 export function toggleVenueViewer() {
@@ -16,6 +14,7 @@ export function selectCurrentVenue( id ) {
 }
 
 export function fetchVenues() {
+  console.log('fetching');
   return {
     type: types.FETCH_VENUES,
   };

@@ -28,4 +28,4 @@ export default function venueReducer(state = initialState, action) {
       return state;
   }
 
-};
+}
