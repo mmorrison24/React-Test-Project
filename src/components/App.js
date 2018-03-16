@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <div>
         <Header isDrawerOpen={this.props.isVenueViewerOpen}/>
-        <div className={'container-fluid'}>
+        <div className={'container-fluid h-100'}>
           <Switch>
             <Route exact path="/" component={VenuesListContainer} />
             <Route component={NotFoundPage} />

@@ -5,27 +5,29 @@ import {bindActionCreators} from 'redux';
 
 import * as actions from '../../actions/venueActions';
 import VenueDetail from '../VenueDetail'
-import '../../styles/listing.scss';
 
 class VenuesListContainer extends React.Component {
-
-
 
   render() {
     const {venues}= this.props
     let $venuesList;
-    if(!venues){
-      $venuesList = venues.map((venue, i) => <VenueDetail i={i} name={venue.name}/>)
+    if(venues && venues.length > 0){
+      $venuesList = venues.map((venue, i) => <VenueDetail
+        key={i}
+        i={i}
+        name={venue.name}
+        category={venue.category}
+        backgroundImageURL={venue.backgroundImageURL}
+      />)
     } else {
-      $venuesList = <div><h2>No Venues Found</h2></div>
+      $venuesList = <div className={'col-12 text-center'}><h2 className={'mt-5'}>No Venues Found</h2></div>
     }
     return (
-      <main>
+      <main className={'row h-100 justify-content align-items-center'}>
         {$venuesList}
       </main>
     );
   }
-
 }
 
 VenuesListContainer.propTypes = {
