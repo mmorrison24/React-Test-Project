@@ -1,18 +1,31 @@
 import "regenerator-runtime/runtime";
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import axios from 'axios';
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchUser(action) {
+import * as ACTIONS from '../constants/actionTypes';
+
+//API
+const getVenues = () => {
+  return axios.get(
+    'https://s3.amazonaws.com/br-codingexams/restaurants.json'
+  ).then(response => response.data)
+    .catch(err => {
+      throw err;
+    });
+}
+
+// worker Sagas
+function* fetchVenues(action) {
   try {
-    const user = yield true;
-    yield put({type: "USER_FETCH_SUCCEEDED", user: user});
-  } catch (e) {
-    yield put({type: "USER_FETCH_FAILED", message: e.message});
+    const venues = yield call(getVenues);
+    yield put({type: ACTIONS.RECIEVED_VENUES, payload: venues.resturants});
+  } catch (err) {
+    yield put({type: ACTIONS.RECIEVED_VENUES_FAILED, payload: err.message});
   }
 }
 
 function* rootSaga() {
-  yield takeLatest("USER_FETCH_REQUESTED", fetchUser);
+  yield takeLatest(ACTIONS.FETCH_VENUES, fetchVenues);
 }
 
 export default rootSaga;

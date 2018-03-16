@@ -14,7 +14,7 @@ import * as actions from '../actions/venueActions'
 
 class App extends React.Component {
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.actions.fetchVenues();
   }
 
@@ -25,7 +25,6 @@ class App extends React.Component {
         <div className={'container-fluid'}>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/about" component={AboutPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

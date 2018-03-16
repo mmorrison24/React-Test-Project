@@ -24,6 +24,12 @@ export default function venueReducer(state = initialState, action) {
         venues: action.payload,
         isLoading: false
       };
+    case ACTIONS.RECIEVED_VENUES_FAILED:
+      return {
+        ...state,
+        venues: action.payload,
+        isLoading: false
+      };
     default:
       return state;
   }
