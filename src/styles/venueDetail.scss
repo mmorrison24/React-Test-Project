@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+#detailDisplay {
+  width: 100%;
+  max-height: 400px;
+  height: 40vh;
+  position: absolute;
+  bottom: 0;
+
+  header {
+    background-color: $dark-green;
+    h2,h4 {
+      margin: 0;
+    }
+    h4{
+      margin-top: 6px;
+    }
+
+  }
+
+  .content {
+    font-weight: 300;
+    color: #2A2A2A;
+
+    h4 {margin-bottom: 2vh;}
+  }
+}

@@ -3,7 +3,7 @@ import initialState from './initialState';
 
 export default function venueReducer(state = initialState, action) {
   switch (action.type) {
-    case ACTIONS.TOGGLE_VENUE_VIEWER:
+    case ACTIONS.CLOSE_VENUE_VIEWER:
       return {
         ...state,
         isVenueViewerOpen: !state.isVenueViewerOpen

@@ -12,7 +12,7 @@ class ActiveVenueContainer extends React.Component {
 
   render() {
     return (
-      <aside id={'rightDrawer'} className={this.props.isVenueViewerOpen?'toggled':''}>
+      <aside id={'rightDrawer'} className={this.props.isVenueViewerOpen?'container toggled':'container'}>
         <ActiveVenueMap ccurrentVenue={this.props.currentVenue}/>
         <ActiveVenueDetails currentVenue={this.props.currentVenue}/>
       </aside>
