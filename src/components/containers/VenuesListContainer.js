@@ -9,20 +9,23 @@ import '../../styles/listing.scss';
 
 class VenuesListContainer extends React.Component {
 
-  render() {
 
+
+  render() {
     const {venues}= this.props
+    let $venuesList;
+    if(!venues){
+      $venuesList = venues.map((venue, i) => <VenueDetail i={i} name={venue.name}/>)
+    } else {
+      $venuesList = <div><h2>No Venues Found</h2></div>
+    }
     return (
       <main>
-        <h1>listing here</h1>
-        {(() => {
-          if(venues){
-            return this.props.venues.map((venue,i) => <VenueDetail i={i} name={venue.name}/>)
-            }
-        })()}
+        {$venuesList}
       </main>
     );
   }
+
 }
 
 VenuesListContainer.propTypes = {
