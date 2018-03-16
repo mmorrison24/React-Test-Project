@@ -9,7 +9,9 @@ body {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
 
-  overflow: hidden;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h2 {

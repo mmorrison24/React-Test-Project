@@ -6,7 +6,7 @@ import '../styles/listing.scss';
 
 const VenueDetail = (props) => {
   return (
-    <article key={props.i} className={'col-12'} style={{'background-image': `url(${props.backgroundImageURL})`}}>
+    <article key={props.i} className={'col-12'} style={{backgroundImage: `url(${props.backgroundImageURL})`}}>
       <aside>
         <h3>{props.name}</h3>
         <h4>{props.category}</h4>

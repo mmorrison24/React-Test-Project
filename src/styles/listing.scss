@@ -5,7 +5,22 @@ h1 {
 }
 
 article {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
   height: 80vw;
+
+  aside {
+    color: white;
+    position: absolute;
+    bottom: 2vh;
+    left: 4vw;
+
+    h3,h2 {margin:0;}
+
+    h3 {
+      font-weight: bold;
+    }
+  }
 }
