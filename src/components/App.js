@@ -5,10 +5,9 @@ import { Switch, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import HomePage from './HomePage';
-import AboutPage from './AboutPage';
 import Header from './Header';
 import ActiveVenueContainer from './containers/ActiveVenueContainer';
+import VenuesListContainer from './containers/VenuesListContainer';
 import NotFoundPage from './NotFoundPage';
 import * as actions from '../actions/venueActions'
 
@@ -24,7 +23,7 @@ class App extends React.Component {
         <Header isDrawerOpen={this.props.isVenueViewerOpen}/>
         <div className={'container-fluid'}>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={VenuesListContainer} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

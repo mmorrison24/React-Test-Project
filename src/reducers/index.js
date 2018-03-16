@@ -3,7 +3,7 @@ import venueReducer from './venueReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  venueReducer,
+  root: venueReducer,
   routing: routerReducer
 });
 

@@ -1,5 +1,5 @@
 import "regenerator-runtime/runtime";
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest } from 'redux-saga/effects'
 import axios from 'axios';
 
 import * as ACTIONS from '../constants/actionTypes';
@@ -15,10 +15,10 @@ const getVenues = () => {
 }
 
 // worker Sagas
-function* fetchVenues(action) {
+function* fetchVenues() {
   try {
     const venues = yield call(getVenues);
-    yield put({type: ACTIONS.RECIEVED_VENUES, payload: venues.resturants});
+    yield put({type: ACTIONS.RECIEVED_VENUES, payload: venues.restaurants});
   } catch (err) {
     yield put({type: ACTIONS.RECIEVED_VENUES_FAILED, payload: err.message});
   }

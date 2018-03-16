@@ -43,7 +43,6 @@ function configureStoreDev(initialState) {
     applyMiddleware(...middlewares)
     )
   );
-
   sagaMiddleware.run(watchFetchVenuesRequest);
 
   if (module.hot) {

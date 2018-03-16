@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -20,11 +20,13 @@ class ActiveVenueContainer extends React.Component {
   }
 }
 
-ActiveVenueContainer.propTypes = {};
+ActiveVenueContainer.propTypes = {
+  currentVenue: PropTypes.number
+};
 
 function mapStateToProps(state) {
   return {
-    currVenue: state.currentVenue
+    currentVenue: state.root.currentVenue
   };
 }
 
