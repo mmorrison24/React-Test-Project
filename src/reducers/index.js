@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import venue from './venueReducer';
+import venueReducer from './venueReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  venue,
+  venueReducer,
   routing: routerReducer
 });
 
