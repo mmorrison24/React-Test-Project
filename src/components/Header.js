@@ -24,5 +24,4 @@ const Header = (props) => {
 };
 
 Header.propTypes = { isDrawerOpen: PropTypes.bool };
-
 export default Header;
