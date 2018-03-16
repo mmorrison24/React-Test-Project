@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import '../../styles/drawer.scss';
-import * as actions from '../../actions/fuelSavingsActions';
+import * as actions from '../../actions/venueActions';
 import ActiveVenueMap from '../ActiveVenueMap';
 import ActiveVenueDetails from "../ActiveVenueDetails";
 

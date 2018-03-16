@@ -1,31 +1,28 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Switch, NavLink, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
-//import {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux';
 
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import Header from './Header';
 import ActiveVenueContainer from './containers/ActiveVenueContainer';
 import NotFoundPage from './NotFoundPage';
+import * as actions from '../actions/venueActions'
 
 class App extends React.Component {
 
+  componentWillMount(){
+    this.props.actions.fetchVenues();
+  }
+
   render() {
-    const activeStyle = { color: 'blue' };
     return (
       <div className={this.props.isVenueViewerOpen + 'test'}>
         <Header isDrawerOpen={this.props.isVenueViewerOpen}/>
         <div className={'container-fluid'}>
-          <div>
-            <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-            {' | '}
-            <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
-            {' | '}
-            <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
-          </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/about" component={AboutPage} />
@@ -41,20 +38,28 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    isVenueViewerOpen: state.isVenueViewerOpen
+    isVenueViewerOpen: state.isVenueViewerOpen,
+    venues: state.venues
   };
 }
 
-/*function mapDispatchToProps(dispatch) {
-  return {};
-}*/
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
 
 App.propTypes = {
-  children: PropTypes.element,
-  isVenueViewerOpen: PropTypes.bool
+  isVenueViewerOpen: PropTypes.bool,
+  venues: PropTypes.object,
+  actions: PropTypes.object.isRequired,
+};
+
+App.defaultProps = {
+  isVenueViewerOpen: false
 };
 
 export default connect(
   mapStateToProps,
-  //mapDispatchToProps
+  mapDispatchToProps
 )(App);
