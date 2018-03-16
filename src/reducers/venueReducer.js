@@ -16,7 +16,8 @@ export default function venueReducer(state = initialState, action) {
     case ACTIONS.SELECT_VENUE:
       return {
         ...state,
-        currentVenue: action.payload
+        currentVenue: action.payload,
+        isVenueViewerOpen: true
       };
     case ACTIONS.RECIEVED_VENUES:
       return {

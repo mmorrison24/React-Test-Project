@@ -11,13 +11,19 @@ class VenuesListContainer extends React.Component {
   render() {
     const {venues}= this.props
     let $venuesList;
+
+    const onVenueClicked = (e, currentVenue) => {
+      this.props.actions.selectCurrentVenue(currentVenue);
+    }
+
     if(venues && venues.length > 0){
       $venuesList = venues.map((venue, i) => <VenueDetail
         key={i}
-        i={i}
         name={venue.name}
         category={venue.category}
+        currentVenue={venue}
         backgroundImageURL={venue.backgroundImageURL}
+        onClickFunction={onVenueClicked}
       />)
     } else {
       $venuesList = <div className={'col-12 text-center'}><h2 className={'mt-5'}>No Venues Found</h2></div>
@@ -31,7 +37,8 @@ class VenuesListContainer extends React.Component {
 }
 
 VenuesListContainer.propTypes = {
-  venues: PropTypes.array.isRequired
+  venues: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

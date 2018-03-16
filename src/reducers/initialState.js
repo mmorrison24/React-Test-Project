@@ -1,6 +1,6 @@
 export default {
   venues: [],
-  currentVenue: undefined,
+  currentVenue: {},
   isVenueViewerOpen: false,
   isLoading: false,
 };

@@ -12,20 +12,23 @@ class ActiveVenueContainer extends React.Component {
 
   render() {
     return (
-      <aside id={'rightDrawer'}>
-        <ActiveVenueMap/>
-        <ActiveVenueDetails/>
+      <aside id={'rightDrawer'} className={this.props.isVenueViewerOpen?'toggled':''}>
+        <ActiveVenueMap ccurrentVenue={this.props.currentVenue}/>
+        <ActiveVenueDetails currentVenue={this.props.currentVenue}/>
       </aside>
     );
   }
 }
 
 ActiveVenueContainer.propTypes = {
-  currentVenue: PropTypes.number
+  isVenueViewerOpen: PropTypes.bool,
+  currentVenue: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
+  console.log('active-venue',state.root.currentVenue)
   return {
+    isVenueViewerOpen: state.root.isVenueViewerOpen,
     currentVenue: state.root.currentVenue
   };
 }

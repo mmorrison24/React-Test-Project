@@ -36,8 +36,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    isVenueViewerOpen: state.isVenueViewerOpen,
-    venues: state.venues
+    isVenueViewerOpen: state.root.isVenueViewerOpen,
   };
 }
 
@@ -49,7 +48,6 @@ function mapDispatchToProps(dispatch) {
 
 App.propTypes = {
   isVenueViewerOpen: PropTypes.bool,
-  venues: PropTypes.object,
   actions: PropTypes.object.isRequired,
 };
 

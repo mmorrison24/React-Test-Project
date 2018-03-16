@@ -6,10 +6,10 @@ export function toggleVenueViewer() {
   };
 }
 
-export function selectCurrentVenue( id ) {
+export function selectCurrentVenue( currentVenue ) {
   return {
     type: types.SELECT_VENUE,
-    payload: { id }
+    payload: currentVenue
   };
 }
 
