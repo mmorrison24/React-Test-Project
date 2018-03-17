@@ -1,13 +1,46 @@
-import React from 'react';
-//import '../styles/map-page.css';
+import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
-// Since this component is simple and static, there's no parent container for it.
-const ActiveVenueMap = () => {
-  return (
-    <div>
-      <h2 className="alt-header">Map Here</h2>
-    </div>
-  );
-};
+import '../styles/venueDetail.scss';
 
-export default ActiveVenueMap;
+export default class ActiveVenueMap extends Component {
+
+  componentDidMount() {
+    this.map = new google.maps.Map( this.$map , {
+      center: {
+        lat: 0,
+        lng: 0},
+      zoom: 17
+    })
+  }
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.currentVenue && nextProps.currentVenue.hasOwnProperty('location')){
+      this.lat = nextProps.currentVenue.location.lat || 0;
+      this.lng = nextProps.currentVenue.location.lng || 0;
+      console.log('wrp', this.lat, this.lng)
+
+      this.map.panTo({
+        lat: this.lat,
+        lng: this.lng
+      })
+    }
+  }
+
+  render(){
+    return (
+      <div id="map" ref={(el) => this.$map = el} className={'row'}>{this.lat} {this.lat}</div>
+    );
+  }
+
+}
+
+ActiveVenueMap.propTypes = {
+  currentVenue: PropTypes.object.isRequired
+}
+
+

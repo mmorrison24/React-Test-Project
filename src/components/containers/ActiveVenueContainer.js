@@ -13,8 +13,8 @@ class ActiveVenueContainer extends React.Component {
   render() {
     return (
       <aside id={'rightDrawer'} className={this.props.isVenueViewerOpen?'container toggled':'container'}>
-        <ActiveVenueMap ccurrentVenue={this.props.currentVenue}/>
-        <ActiveVenueDetails currentVenue={this.props.currentVenue}/>
+        <ActiveVenueMap currentVenue={this.props.currentVenue}/>
+        <ActiveVenueDetails onClickCloseBtn={this.props.actions.closeVenueViewer} currentVenue={this.props.currentVenue}/>
       </aside>
     );
   }
@@ -23,6 +23,7 @@ class ActiveVenueContainer extends React.Component {
 ActiveVenueContainer.propTypes = {
   isVenueViewerOpen: PropTypes.bool,
   currentVenue: PropTypes.object.isRequired,
+  actions: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {

@@ -1,6 +1,7 @@
 import * as types from '../constants/actionTypes';
 
-export function toggleVenueViewer() {
+export function closeVenueViewer() {
+  console.log('clsing');
   return {
     type: types.CLOSE_VENUE_VIEWER
   };
@@ -14,7 +15,6 @@ export function selectCurrentVenue( currentVenue ) {
 }
 
 export function fetchVenues() {
-  console.log('fetching');
   return {
     type: types.FETCH_VENUES,
   };
