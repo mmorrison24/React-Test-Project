@@ -20,7 +20,7 @@ const ActiveVenueDetails = (props) => {
             <h5>{category}</h5>
           </div>
           <div className={'col-2 text-right'}>
-                <img src={'./styles/assets/ic_webForward@2x.png'} height="36px" className={'mr-4 mt-2'} onClick={props.onClickCloseBtn}/>
+                <img src={'./styles/assets/ic_webForward@2x.png'} height="36px" className={'mr-4 mt-3'} onClick={props.onClickCloseBtn}/>
           </div>
         </div>
 
