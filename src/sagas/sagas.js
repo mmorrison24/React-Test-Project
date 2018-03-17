@@ -7,7 +7,13 @@ import * as ACTIONS from '../constants/actionTypes';
 //API
 const getVenues = () => {
   return axios.get(
-    'https://s3.amazonaws.com/br-codingexams/restaurants.json'
+    'https://s3.amazonaws.com/br-codingexams/restaurants.json',
+    {
+      mode: 'no-cors',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },}
   ).then(response => response.data)
     .catch(err => {
       throw err;

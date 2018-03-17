@@ -4,7 +4,7 @@ import '../styles/listing.scss';
 
 const VenueDetail = (props) => {
   return (
-    <article key={props.i} className={'col-12'}
+    <article key={props.i} className={'col-12 col-md-6'}
              onClick={(e) => props.onClickFunction(e, props.currentVenue)}
              style={{backgroundImage: `url(${props.backgroundImageURL})`}}>
       <aside>
