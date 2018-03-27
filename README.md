@@ -1,6 +1,6 @@
 
 ## Porst Mortem
-Wanted to approach some new starter kits I usually don't get to use. I appreciate this excerise for the time to re-adjust process and profile new libraries and styles.
+Wanted to approach some new starter kits I usually don't get to use. I appreciate this exercise for the time to re-adjust process and profile new libraries and styles within the React ecosystem.
 
 **Install / Running instructions**
 
@@ -18,7 +18,7 @@ npm start -s
 
 Foundation:
 
-1. react-slingshot - start-kit, saw some older tutorials using it. [see regrets]
+1. react-slingshot - start-kit, saw some older tutorials using it. [see Improvements]
 2. standard redux stuff
 3. redux-saga + axios for api integration
 4. smart containers - stateless components
@@ -26,18 +26,18 @@ Foundation:
 
 **Few thoughts on Requirments**
 
-1. **Avenir** - I personally don't have Avenir on my machine - I did some searching and found conversation that the google font Nunito Sans is a very precise alternative.
+1. **Avenir** - I personally don't have Avenir on my machine - I did some searching and found conversation that the google font Nunito Sans is a precise alternative, and used that in the palce of Avenir.
 2. **SVG vs PNG** - Noticed the 2x image assets were provided - they are quite small in size; but in a real project would suggest these images be SVG's.
 3. **Shadow asset vs CSS3** - The shadow asset image I would implement as a css3 dropshadow, perhaps using a filter if per-se a multiply affect was wanted. (forgot to add that in tho...please forgive)
 
 **Improvements**
 
-Given an opprtunity to do this again, I would use something simpler boilerplate project as a starting point. There was alot to work through , and with the current new features, I wish I did a bit less wrangler with platform.
+Given an opportunity to do this again, I would use a somewhat simpler boilerplate project as a starting point. There was a lot of code to work through, and with the current new features, I wish I used a starter kit, that required a bit less wrangler with platform.
 
 I probably would have used something simpler like [react-root](https://www.npmjs.com/package/react-root) or [bae](https://github.com/siddharthkp/bae) . 
 But there is always that consideration that needs to be taken towards how opinionated , recently updated etc a starter kit may be.
 
-Would have loved to have explored some of the React16 features especially Provider-Consumer context, but really wanted to try and look at React-Saga and wasnt sure how those would fit together.
+Would have loved to have explored some of the React16 features especially Provider-Consumer context, but really wanted to try and look at React-Saga and wasn't sure how those would fit together.
 
 **Regrets**
 
