@@ -16,7 +16,7 @@ class VenuesListContainer extends React.Component {
       this.props.actions.selectCurrentVenue(currentVenue);
     }
 
-    if(venues && venues.length > 0){
+    if(venues && venues.length > 0 && Array.isArray(venues)){
       $venuesList = venues.map((venue, i) => <VenueDetail
         key={i}
         name={venue.name}

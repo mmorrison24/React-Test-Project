@@ -23,7 +23,7 @@ class ActiveVenueContainer extends React.Component {
 ActiveVenueContainer.propTypes = {
   isVenueViewerOpen: PropTypes.bool,
   currentVenue: PropTypes.object.isRequired,
-  actions: PropTypes.func.isRequired,
+  actions: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
